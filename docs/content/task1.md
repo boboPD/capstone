@@ -1,7 +1,7 @@
 ---
 title: "Task 1: Analysis of topic models in Yelp dataset"
 date: 2020-05-30T19:28:33+05:30
-draft: true
+draft: false
 ---
 
 In this document we are going to look at the reviews given to restaurants on the Yelp platform and extract/analyse the topics discussed in the those reviews. We are going to compare topics by the following categories:
