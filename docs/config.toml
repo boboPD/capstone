@@ -1,4 +1,5 @@
-baseURL = "http://example.org/"
+baseURL = "https://bobopd.github.io/capstone/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "CS 519 Data Mining Capstone"
 publishDir = "docs"
+theme = "hugo-theme-simple-blog"

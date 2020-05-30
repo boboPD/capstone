@@ -1,0 +1,22 @@
+{{ partial "header.html" . }}
+<header class="text-center bg-dark pt-5 pb-5 col-12">
+  {{ if not .IsHome }}
+  <h1 class="text-white pt-5 pb-3">{{ .Title }}</h1>
+  <p class="text-white pb-4 text-muted">
+    <a href="{{ .Site.BaseURL }}" class="text-reset pr-4">Back to Home</a>{{ len .Data.Pages }} Articles to read
+  </p>
+  {{ else }}
+  <h1 class="text-white pt-5 pb-3"><a href="{{ .Site.BaseURL }}" class="text-reset">{{ .Site.Title }}</a></h1>
+  <p class="pb-5"></p>
+  {{ end }}
+</header>
+<div class="container pt-3">
+  <ul>
+    {{ range .Pages}}
+        <li>
+            ,<a href="{{ .URL }}">{{ .Title }}</a>
+        </li>
+    {{end}}
+  </ul>
+</div>
+{{ partial "footer.html" . }}
