@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ldavis on CS 519 Data Mining Capstone</title>
+    <link>https://bobopd.github.io/capstone/ldavis/</link>
+    <description>Recent content in Ldavis on CS 519 Data Mining Capstone</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 May 2020 23:45:20 +0530</lastBuildDate>
+    
+	<atom:link href="https://bobopd.github.io/capstone/ldavis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pyLDAvis visualisation for WI</title>
+      <link>https://bobopd.github.io/capstone/ldavis/wi/</link>
+      <pubDate>Sat, 30 May 2020 23:45:20 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/wi/</guid>
+      <description>var ldavis_el1552822468031916241496176970_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [-0.11121219399012208, -0.026610553886628106, 0.1378227478767502], &#34;y&#34;: [0.06263694790496346, -0.09486392666783362, 0.03222697876287021], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [28.321043014526367, 46.923763275146484, 24.75519561767578]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>pyLDAvis visualisation for ON</title>
+      <link>https://bobopd.github.io/capstone/ldavis/on/</link>
+      <pubDate>Sat, 30 May 2020 23:45:17 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/on/</guid>
+      <description>var ldavis_el1552822467251513046492668666_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [0.023235057111810863, -0.05773217190927604, 0.034497114797465166], &#34;y&#34;: [-0.05003001888236977, 0.006109132779690518, 0.04392088610267925], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [35.312294006347656, 28.096887588500977, 36.590816497802734]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>pyLDAvis visualisation for NV</title>
+      <link>https://bobopd.github.io/capstone/ldavis/nv/</link>
+      <pubDate>Sat, 30 May 2020 23:45:10 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/nv/</guid>
+      <description>var ldavis_el155282246803191880533145924_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [-0.06527127124807323, 0.2150767763518514, -0.14980550510377819], &#34;y&#34;: [0.11702722664212584, -0.027112324843466113, -0.08991490179865981], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [31.930265426635742, 4.494928359985352, 63.57481002807617]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>pyLDAvis visualisation for MLN</title>
+      <link>https://bobopd.github.io/capstone/ldavis/mln/</link>
+      <pubDate>Sat, 30 May 2020 23:45:03 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/mln/</guid>
+      <description>var ldavis_el1552822466939711447754424333_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [-0.02522609244413305, -0.048042492415792046, 0.07326858485992509], &#34;y&#34;: [-0.061222814699229966, 0.049707920437813476, 0.011514894261416461], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [37.40499496459961, 38.645286560058594, 23.949722290039062]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>pyLDAvis visualisation for EDH</title>
+      <link>https://bobopd.github.io/capstone/ldavis/edh/</link>
+      <pubDate>Sat, 30 May 2020 23:44:55 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/edh/</guid>
+      <description>var ldavis_el1552822466939731924214563649_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [0.10137877814209183, -0.14097056719934375, 0.039591789057251955], &#34;y&#34;: [0.08465317881938332, 0.028967638350251092, -0.11362081716963439], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [37.28575897216797, 16.12839698791504, 46.585838317871094]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>pyLDAvis visualisation for AZ</title>
+      <link>https://bobopd.github.io/capstone/ldavis/az/</link>
+      <pubDate>Sat, 30 May 2020 23:44:32 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/az/</guid>
+      <description>var ldavis_el1552822466939702485490651293_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [0.206994766394265, -0.10246105397286655, -0.10453371242139838], &#34;y&#34;: [0.0007632531189204258, -0.11471985809192065, 0.1139566049730003], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [8.54163646697998, 22.603120803833008, 68.85523986816406]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+  </channel>
+</rss>
