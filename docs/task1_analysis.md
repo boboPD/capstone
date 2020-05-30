@@ -25,13 +25,15 @@ Now the reviews are ready to be processed.
 ## Topic Modelling
 
 We are using the __Gensim__ library to create topic models. We have used word clouds to visualise topics and also used pyLDAvis to create interactive visualisations. We will now go through each of the topics.
-  * __Word Clouds__: The word clouds that you will see below essentially try to model the importance of each word in a topic and the importance of the topics too. The size of the words are proportional to the probability of the word given the topic i.e P(w | T). Also, all the words belonging to the same topic are represented in the same colour.
-  * __pyLDAvis__: The pyLDAvis library has a unique take to extracting representative words from a topic. They use a concept called relevance to rank the most important words in the topic. Relevance in nothing but the weighted average of the logarithms of P(w | T) and the list of P(w | T). So essentially it tries to capture how popular the word is in that topic and also how exclusive it is to the topic. ___The idea is that the representative words in a topic are those that are both frequent and exclusive to that topic___:
 
-    ```
-    r = L * _log_(P(w | T)) + (1 - L) * _log_(P(w | T) / P(w))
-    ```
-    Here L is a regulating parameter that controls the importance given to lift vs probability. [Link to original paper.](http://nlp.stanford.edu/events/illvi2014/papers/sievert-illvi2014.pdf)
+* __Word Clouds__: The word clouds that you will see below essentially try to model the importance of each word in a topic and the importance of the topics too. The size of the words are proportional to the probability of the word given the topic i.e P(w | T). Also, all the words belonging to the same topic are represented in the same colour.
+
+* __pyLDAvis__: The pyLDAvis library has a unique take to extracting representative words from a topic. They use a concept called relevance to rank the most important words in the topic. Relevance in nothing but the weighted average of the logarithms of P(w | T) and the list of P(w | T). So essentially it tries to capture how popular the word is in that topic and also how exclusive it is to the topic. ___The idea is that the representative words in a topic are those that are both frequent and exclusive to that topic___:
+
+  ```
+  r = L * _log_(P(w | T)) + (1 - L) * _log_(P(w | T) / P(w))
+  ```
+  Here L is a regulating parameter that controls the importance given to lift vs probability. [Link to original paper.](http://nlp.stanford.edu/events/illvi2014/papersievert-illvi2014.pdf)
 
 #### Topics by states
 
