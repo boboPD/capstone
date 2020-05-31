@@ -8,6 +8,7 @@ In this document we are going to look at the reviews given to restaurants on the
 1. Topics by state
 2. Topics by review sentiment. Positive or negative.
 3. Topics discussed by the 50 most popular users (by fan count)
+4. Topics by cuisine
 
 ## Preprocessing steps
 
@@ -36,7 +37,7 @@ We are using the __Gensim__ library to create topic models. We have used word cl
 
   r = L * _log_(P(w | T)) + (1 - L) * _log_(P(w | T) / P(w))
 
-  Here L is a regulating parameter that controls the importance given to lift vs probability. In all of my analysis I have taken the this value to be 0.3. [Link to original paper.](http://nlp.stanford.edu/events/illvi2014/papersievert-illvi2014.pdf)
+  Here L is a regulating parameter that controls the importance given to lift vs probability. In all of my analysis I have taken the this value to be 0.6 as suggested by the following paper based on user study. [Link to original paper.](http://nlp.stanford.edu/events/illvi2014/papersievert-illvi2014.pdf)
 
 #### Topics by states
 
@@ -47,7 +48,7 @@ We extracted reviews for all the restaurants by state to see if there were speci
 As you can see, the topics manage to capture the main food items and cuisines for each of the states. In Arizona and Ontario sushi seems to be extremely popular but Arizona also seems to like mexican food a lot whereas Ontario is more interested in burgers.   
 Some of the major places also are captured. We can see Vegas occurring in two topics quite prominently for Nevada for obvious reasons, as does Madison for Wisconsin. Waterloo seems to be an important place for foodies in Ontario and so on.
 
-Now lets look at the salient words of topics according to pyLDAvis. For the sake of brevity I will only discuss the visualization for Arizona. The links to the rest of the interactive visualisations are below. We will set the value of lambda at 0.3 to give more importance to the exclusivity of a word to a topic.
+Now lets look at the salient words of topics according to pyLDAvis. For the sake of brevity I will only discuss the visualization for Arizona. [Link to rest of the visualisations](https://bobopd.github.io/capstone/ldavis/)
 
 {{< pyldavis AZ>}}
 
@@ -80,3 +81,22 @@ ___Note: Since it is quite evident that pyLDAvis is better at finding interestin
 Here we have generated 5 topics from the reviews given by the 50 most popular users. The topics are spread fairly well apart except topic 3 and 5. Most of the top words seem to be food items and cuisines. Nothing too interesting here. 
 
 {{< pyldavis pop_users >}}
+
+
+#### Topics by cuisine
+
+The categories array contains many values that are not cuisine related and also there are too many distinct values so I have decided to manually create a list of cuisines from the categories that have the most reviews so that we capture the most popular cuisines. I calculated the number of reviews by category and chose the following six cuisines from the categories with the largest number of reviews: {"American (New)", "Mexican", "Italian", "Japanese", "Chinese", "Thai"}. Also, since the number of reviews was very large for each cuisine I have sampled 10000 reviews per cuisine and created a model to find 3 topics.
+
+[Link to all the visualisations](https://bobopd.github.io/capstone/ldavis/)
+
+##### Thai
+
+Topic 1 is the most easy to interpret. It relates almost completely with the thai cuisine and related food. Topic 2 is also an easily interpretable topic but is more restaurant related does not have anything to do with thai cuisine. Topic 3 does not seem to be coherent. Evidently, 3 topics was too many for this dataset.
+
+{{< pyldavis thai >}}
+
+##### American (New)
+
+None of the topics look as homgenous as Topic 1 for the Thai cuisine. The topics seem to have captured the concept of meals and related ideas instead of dishes directly associated with the cuisine like Topic 1 in the previous visualisation. In this case Topic 1 clearly corresponds to breakfast as the salient words (like coffee, breakfast, eggs, toast, etc) all relate with the idea of a breakfast. Probably relating to the american breakfast. Topic 3 is again related to restaurants generally and nothing seems to be specific to the cuisine. Topic 2 is not as coherent as the other two. This looks like a repeat of the Thai visualisation where one topic is related quite closely to the cuisine, the second captures the general idea of restaurants and the third seems to be a catch all topic. Maybe using 2 topics would have been better in this case too.
+
+{{< pyldavis american >}}

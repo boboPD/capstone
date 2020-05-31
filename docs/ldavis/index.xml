@@ -6,13 +6,67 @@
     <description>Recent content in Ldavis on CS 519 Data Mining Capstone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 May 2020 23:45:20 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 21:33:21 +0530</lastBuildDate>
     
 	<atom:link href="https://bobopd.github.io/capstone/ldavis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>pyLDAvis visualisation for WI</title>
+      <title>Visualisation for Chinese cuisine </title>
+      <link>https://bobopd.github.io/capstone/ldavis/chinese/</link>
+      <pubDate>Sun, 31 May 2020 21:33:21 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/chinese/</guid>
+      <description>var ldavis_el2225619893823529683838963629_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [-0.09837212320668602, -0.07135519769855023, 0.16972732090523618], &#34;y&#34;: [0.11911308682868121, -0.1324615013571664, 0.013348414528485246], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [44.48945236206055, 44.70060729980469, 10.809943199157715]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>Visualisation for American cuisine </title>
+      <link>https://bobopd.github.io/capstone/ldavis/american/</link>
+      <pubDate>Sun, 31 May 2020 21:33:12 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/american/</guid>
+      <description>var ldavis_el2225619893389898969167152238_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [-0.12474816800662536, -0.03212882475743208, 0.15687699276405745], &#34;y&#34;: [0.07557746222013888, -0.11261301491932554, 0.03703555269918665], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [16.686687469482422, 43.89847183227539, 39.41484069824219]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>Visualisation for Japanese cuisine </title>
+      <link>https://bobopd.github.io/capstone/ldavis/japanese/</link>
+      <pubDate>Sun, 31 May 2020 21:33:04 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/japanese/</guid>
+      <description>var ldavis_el2225619893389897688575641575_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [0.26040892075709127, -0.14867498972514187, -0.11173393103194931], &#34;y&#34;: [-0.010400907665480047, -0.10477835711133861, 0.11517926477681875], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [3.1431398391723633, 70.63291931152344, 26.223936080932617]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>Visualisation for Italian cuisine </title>
+      <link>https://bobopd.github.io/capstone/ldavis/italian/</link>
+      <pubDate>Sun, 31 May 2020 21:32:35 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/italian/</guid>
+      <description>var ldavis_el2225619893652099285098549140_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [0.09866591668838427, -0.15151745301988295, 0.052851536331498666], &#34;y&#34;: [0.09945565192573254, 0.022295452360109855, -0.12175110428584233], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [35.13822555541992, 20.465686798095703, 44.396087646484375]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>Visualisation for Mexican cuisine </title>
+      <link>https://bobopd.github.io/capstone/ldavis/mexican/</link>
+      <pubDate>Sun, 31 May 2020 21:31:30 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/mexican/</guid>
+      <description>var ldavis_el2225619893373872088379153942_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [0.20999308397539193, -0.07074457850444887, -0.13924850547094306], &#34;y&#34;: [0.02912445205919591, -0.14848010003692352, 0.11935564797772759], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [5.866766929626465, 30.398941040039062, 63.734291076660156]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>Visualisation for Thai cuisine</title>
+      <link>https://bobopd.github.io/capstone/ldavis/thai/</link>
+      <pubDate>Sun, 31 May 2020 21:25:19 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/ldavis/thai/</guid>
+      <description>var ldavis_el2225619893389892563906074208_data = {&#34;mdsDat&#34;: {&#34;x&#34;: [-0.19258027151773818, -0.04271083293335781, 0.23529110445109597], &#34;y&#34;: [0.09927789802245432, -0.15279811079667874, 0.053520212774224446], &#34;topics&#34;: [1, 2, 3], &#34;cluster&#34;: [1, 1, 1], &#34;Freq&#34;: [79.1792221069336, 17.06069564819336, 3.760082721710205]}, &#34;tinfo&#34;: {&#34;Category&#34;: [&#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Default&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;Topic1&#34;, &#34;</description>
+    </item>
+    
+    <item>
+      <title>Visualisation for State: WI</title>
       <link>https://bobopd.github.io/capstone/ldavis/wi/</link>
       <pubDate>Sat, 30 May 2020 23:45:20 +0530</pubDate>
       
@@ -21,7 +75,7 @@
     </item>
     
     <item>
-      <title>pyLDAvis visualisation for ON</title>
+      <title>Visualisation for State: ON</title>
       <link>https://bobopd.github.io/capstone/ldavis/on/</link>
       <pubDate>Sat, 30 May 2020 23:45:17 +0530</pubDate>
       
@@ -30,7 +84,7 @@
     </item>
     
     <item>
-      <title>pyLDAvis visualisation for NV</title>
+      <title>Visualisation for State: NV</title>
       <link>https://bobopd.github.io/capstone/ldavis/nv/</link>
       <pubDate>Sat, 30 May 2020 23:45:10 +0530</pubDate>
       
@@ -39,7 +93,7 @@
     </item>
     
     <item>
-      <title>pyLDAvis visualisation for MLN</title>
+      <title>Visualisation for State: MLN</title>
       <link>https://bobopd.github.io/capstone/ldavis/mln/</link>
       <pubDate>Sat, 30 May 2020 23:45:03 +0530</pubDate>
       
@@ -48,7 +102,7 @@
     </item>
     
     <item>
-      <title>pyLDAvis visualisation for EDH</title>
+      <title>Visualisation for State: EDH</title>
       <link>https://bobopd.github.io/capstone/ldavis/edh/</link>
       <pubDate>Sat, 30 May 2020 23:44:55 +0530</pubDate>
       
@@ -57,7 +111,7 @@
     </item>
     
     <item>
-      <title>pyLDAvis visualisation for AZ</title>
+      <title>Visualisation for State: AZ</title>
       <link>https://bobopd.github.io/capstone/ldavis/az/</link>
       <pubDate>Sat, 30 May 2020 23:44:32 +0530</pubDate>
       
