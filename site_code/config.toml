@@ -1,5 +1,5 @@
 baseURL = "https://bobopd.github.io/capstone/"
 languageCode = "en-us"
-title = "CS 519 Data Mining Capstone"
+title = "CS 598 Data Mining Capstone"
 publishDir = "../docs"
 theme = "hugo-theme-simple-blog"
