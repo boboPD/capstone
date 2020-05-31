@@ -45,7 +45,7 @@
 <li>
 <p><strong>pyLDAvis</strong>: The pyLDAvis library has a unique take to extracting representative words from a topic. They use a concept called relevance to rank the most important words in the topic. Relevance in nothing but the weighted average of the logarithms of P(w | T) and the list of P(w | T). So essentially it tries to capture how popular the word is in that topic and also how exclusive it is to the topic. <em><strong>The idea is that the representative words in a topic are those that are both frequent and exclusive to that topic</strong></em>:</p>
 <p>r = L * <em>log</em>(P(w | T)) + (1 - L) * <em>log</em>(P(w | T) / P(w))</p>
-<p>Here L is a regulating parameter that controls the importance given to lift vs probability. In all of my analysis I have taken the this value to be 0.6 as suggested by the following paper based on user study. <a href="http://nlp.stanford.edu/events/illvi2014/papersievert-illvi2014.pdf">Link to original paper.</a></p>
+<p>Here L is a regulating parameter that controls the importance given to lift vs probability. <strong>In all of my analysis I have taken the this value to be 0.6 as suggested by the following paper based on user study</strong>. <a href="http://nlp.stanford.edu/events/illvi2014/papersievert-illvi2014.pdf">Link to original paper.</a></p>
 </li>
 </ul>
 <h4 id="topics-by-states">Topics by states</h4>

@@ -37,7 +37,7 @@ We are using the __Gensim__ library to create topic models. We have used word cl
 
   r = L * _log_(P(w | T)) + (1 - L) * _log_(P(w | T) / P(w))
 
-  Here L is a regulating parameter that controls the importance given to lift vs probability. In all of my analysis I have taken the this value to be 0.6 as suggested by the following paper based on user study. [Link to original paper.](http://nlp.stanford.edu/events/illvi2014/papersievert-illvi2014.pdf)
+  Here L is a regulating parameter that controls the importance given to lift vs probability. __In all of my analysis I have taken the this value to be 0.6 as suggested by the following paper based on user study__. [Link to original paper.](http://nlp.stanford.edu/events/illvi2014/papersievert-illvi2014.pdf)
 
 #### Topics by states
 
