@@ -10,6 +10,8 @@ In this document we are going to look at the reviews given to restaurants on the
 3. Topics discussed by the 50 most popular users (by fan count)
 4. Topics by cuisine
 
+[The code for this analysis is available here.](https://github.com/boboPD/capstone/blob/master/code/Task1/Task1.ipynb)
+
 ## Preprocessing steps
 
 After reading the restaurant and review data from the flat files the review data was preprocessed in order to generate better topics.
