@@ -1,5 +1,5 @@
 ---
-title: "Task2: Similarity of cuisines"
+title: "Task 2: Similarity of cuisines"
 date: 2020-06-07T21:17:14+05:30
 draft: false
 ---
