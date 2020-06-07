@@ -4,7 +4,7 @@ date: 2020-06-07T21:17:14+05:30
 draft: false
 ---
 
-In this task I shall attempt to extract a way to represent cuisines from the review text. I will be using the same preprocessed set of reviews that we used for the previous task. I had saved the proprocessed reviews as a csv file so it could be easily loaded for future tasks without having to redo the processing every time. Here is the jupyter notebook that contains the code for this task.
+In this task I shall attempt to extract a way to represent cuisines from the review text. I will be using the same preprocessed set of reviews that we used for the previous task. I had saved the proprocessed reviews as a csv file so it could be easily loaded for future tasks without having to redo the processing every time. [Here is the jupyter notebook that contains the code for this task](https://github.com/boboPD/capstone/blob/master/code/Task2/Task2.ipynb).
 
 Two variantions of representing cuisines have been explored:
 
@@ -42,7 +42,7 @@ When I did this for the _Thai_ cuisine I got the following words:
 |rice     |       0.009387|
 |spicy    |       0.008782|
 |lunch    |       0.008225|
-|dish     |       0.007159|
+|dish     |       0.007159|  
 
 This is very similar to the top words that we get in the LDA model. So this direction looked promising. In order to further improve the the representative words I divided each probability by the marginal probability of the word (this is basically the ____lift___ measure).
 
@@ -64,7 +64,7 @@ Once I calculated this for every word and re-sorted the list based on I the foll
 |tofu     |       7.232515|
 |noodles  |       6.889217|
 
-This list is obviously a must better representation of the Thai cuisine than the previous one and so I settled on using this as my cuisine representation.
+This list is obviously a much better representation of the Thai cuisine than the previous one and so I settled on using this as my cuisine representation.
 
 I repeated this task for each cuisine and was able to generate a matrix of cuisine x words. Reproducing a small version of that below for clarity. The cells that contain zero baiscally mean that the word was not present in that cuisine.
 

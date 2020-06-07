@@ -18,7 +18,7 @@
 <div class="container">
   <div class="row pt-5">
     <div class="col-12">
-      <p>In this task I shall attempt to extract a way to represent cuisines from the review text. I will be using the same preprocessed set of reviews that we used for the previous task. I had saved the proprocessed reviews as a csv file so it could be easily loaded for future tasks without having to redo the processing every time. Here is the jupyter notebook that contains the code for this task.</p>
+      <p>In this task I shall attempt to extract a way to represent cuisines from the review text. I will be using the same preprocessed set of reviews that we used for the previous task. I had saved the proprocessed reviews as a csv file so it could be easily loaded for future tasks without having to redo the processing every time. <a href="https://github.com/boboPD/capstone/blob/master/code/Task2/Task2.ipynb">Here is the jupyter notebook that contains the code for this task</a>.</p>
 <p>Two variantions of representing cuisines have been explored:</p>
 <ol>
 <li>Representing cuisines as word ditributions over reviews for that cuisine</li>
@@ -155,7 +155,7 @@ if(typeof(LDAvis) !== "undefined"){
 </tr>
 </tbody>
 </table>
-<p>This list is obviously a must better representation of the Thai cuisine than the previous one and so I settled on using this as my cuisine representation.</p>
+<p>This list is obviously a much better representation of the Thai cuisine than the previous one and so I settled on using this as my cuisine representation.</p>
 <p>I repeated this task for each cuisine and was able to generate a matrix of cuisine x words. Reproducing a small version of that below for clarity. The cells that contain zero baiscally mean that the word was not present in that cuisine.</p>
 <table>
 <thead>
