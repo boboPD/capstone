@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Task2: Similarity of cuisines</title>
+      <link>https://bobopd.github.io/capstone/task2/</link>
+      <pubDate>Sun, 07 Jun 2020 21:17:14 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/task2/</guid>
+      <description>In this task I shall attempt to extract a way to represent cuisines from the review text. I will be using the same preprocessed set of reviews that we used for the previous task. I had saved the proprocessed reviews as a csv file so it could be easily loaded for future tasks without having to redo the processing every time. Here is the jupyter notebook that contains the code for this task.</description>
+    </item>
+    
+    <item>
       <title>Visualisation for Chinese cuisine </title>
       <link>https://bobopd.github.io/capstone/ldavis/chinese/</link>
       <pubDate>Sun, 31 May 2020 21:33:21 +0530</pubDate>
