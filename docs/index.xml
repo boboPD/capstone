@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Task 3: Extracting dishes from reviews</title>
+      <link>https://bobopd.github.io/capstone/task3/</link>
+      <pubDate>Sat, 13 Jun 2020 16:22:08 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/task3/</guid>
+      <description>In this excercise I will attempt to extract dishes that belong to a cuisine from the user reviews. For example, from the Chinese restaurant reviews I will try to extract the names of chinese dishes like hakka noodles, kung pao chicken etc. The primary method I used for this task is phrase extraction from the reviews and then trying to rank the phrases based on the probability that they are dishes for the cuisine in question.</description>
+    </item>
+    
+    <item>
       <title>Task 2: Similarity of cuisines</title>
       <link>https://bobopd.github.io/capstone/task2/</link>
       <pubDate>Sun, 07 Jun 2020 21:17:14 +0530</pubDate>
