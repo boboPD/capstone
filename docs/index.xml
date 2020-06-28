@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Task 4 and 5: Sentiment Analysis of dish reviews</title>
+      <link>https://bobopd.github.io/capstone/task4_5/</link>
+      <pubDate>Sun, 28 Jun 2020 15:40:34 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/task4_5/</guid>
+      <description>In this task I shall attempt to use the restaurant reviews to mine perceptions of various dishes served in the restaurants. Using this data we want to:
+ Find the most popular dishes in a given cuisine. These would be the dishes that were most favourably reviewed for that cuisine. Recommend restaurants given a dish name.  So basically, I need a way to analyse the sentiment of each dish in every review.</description>
+    </item>
+    
+    <item>
       <title>Task 3: Extracting dishes from reviews</title>
       <link>https://bobopd.github.io/capstone/task3/</link>
       <pubDate>Sat, 13 Jun 2020 16:22:08 +0530</pubDate>
