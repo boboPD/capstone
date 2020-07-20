@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Task 6: Predicting hygiene from restaurant reviews - CS 598 Data Mining Capstone</title>
+    <link href="https://bobopd.github.io/capstone/css/bootstrap.css" rel="stylesheet">
+    <link href="https://bobopd.github.io/capstone/styling.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+<header class="text-center bg-dark pt-5 pb-5 col-12">
+  
+  <h1 class="text-white pt-4 pb-3">Task 6: Predicting hygiene from restaurant reviews</h1>
+  <p class="text-secondary">July 20, 2020</p>
+  
+</header>
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-12">
+      <p>In this task we will attempt to predict which restaurants will pass or fail a public health inspection based on the reviews and some additional info like pincode, categories, review count and overall rating. We are given a total of 13299 rows of restaurant data out of which 546 rows contain the true labels. Moreover the training data is evenly split between the 2 classes while the rest of the rows are apparently not. So this is essentially a classification problem where the <em>amount of labelled data is much lower than the test data</em> and there is also the problem of data skewness.</p>
+<p><a href="https://github.com/boboPD/capstone/blob/master/code/Task6/Task6.ipynb">You can find the code for this task here</a></p>
+<p>I have tried the following approaches to solve the problem:</p>
+<h2 id="text-representation">Text Representation</h2>
+<p>I have tried the following ways of representing the text reviews:</p>
+<ul>
+<li>
+<p><strong>Each review represented as a hygiene sentiment score</strong>: I obtained this score by pulling out the sentences in the reviews that contain words that are semantically related to hygiene, like synonyms and antonyms, and then running them through a sentiment analyser. I got the list from <a href="https://www.powerthesaurus.org/">https://www.powerthesaurus.org/</a>. This is the list of words that I used as seed words: <code>{&quot;sanitation&quot;, &quot;salubrity&quot;, &quot;sanitary&quot;, &quot;hygienic&quot;, &quot;tidiness&quot;, &quot;sterility&quot;, &quot;disinfection&quot;, &quot;filth&quot;, &quot;uncleanliness&quot;, &quot;dirt&quot;, &quot;garbage&quot;, &quot;muck&quot;, &quot;clean&quot;, &quot;sterile&quot;, &quot;dirty&quot;, &quot;hygiene&quot;}</code>.<br>
+In this manner I was able to get a fairly accurate representation of reviews that dicussed hygiene. A negative score meant a bad review and a positive score meant hygiene was good. I verified a couple of the scores manually and felt that they were quite descriptive. <em>The major drawback of this approach was that less than 1/3 of the reviews contained the words in the list and even for the ones that did, quite a large number were very close to zero. Only 63 rows in the training set had this value.</em> Yet, I decided to keep this column since in some of the cases it could single handedly predict the outcome and I hoped that it would be a useful indicator nonetheless.</p>
+</li>
+<li>
+<p><strong>Reviews as unigrams:</strong> This is fairly self explanatory. I used the sklearn <code>CountVectorizer</code> to get my counts after removing stopwords and some basic data cleaning. Also, the vocabulary size was north of 90k which was causing the model training to take in impossibly long time on my machine and so I limited it to under 5000. I actually tried 3 values to see its effect on the models (1000, 2500 and 5000).</p>
+</li>
+</ul>
+<h2 id="classification-approaches">Classification approaches</h2>
+<p>The tried using the following models for the classification problem:</p>
+<ul>
+<li>Basic Decision Tree</li>
+<li>AdaBoost</li>
+<li>Random Forest</li>
+<li>Decision Tree classifier trained by bagging approach</li>
+<li>Self training using the unlabelled data</li>
+</ul>
+<p>I also tried the Naive Bayes and Logistic Regression to see how they performed by then were always well below the the others so I did not spend too much time on them.</p>
+<h2 id="results">Results</h2>
+<p><em>All the model training in this section is done using the first 546 rows as training data. Scikit-learn library was used for modelling.</em></p>
+<h3 id="training-without-the-review-text-data">Training without the review text data</h3>
+<p>My first attempt consisted of training models only on the addtional info dataset augemented with my <strong>hygiene score</strong>. The cartegories were converted into an n-hot encoded vector after removing the &ldquo;Restaurant&rdquo; category since that was present in every record. So this is what my dataset looked like:</p>
+<p><img src="/capstone/hygiene1.png" alt="initial dataset with additional info and hygiene score"></p>
+<p>I modelled a Decision Tree with no cap on the depth, using AdaBoost that used a DecisionTree with depth 1 as the classifier and a random forest. Below are the results:</p>
+<table>
+<thead>
+<tr>
+<th>Classifier</th>
+<th>Precision</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision Tree</td>
+<td>0.5256</td>
+<td>0.5272</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>0.5377</td>
+<td>0.5418</td>
+</tr>
+<tr>
+<td>AdaBoost</td>
+<td>0.5544</td>
+<td>0.5573</td>
+</tr>
+</tbody>
+</table>
+<p>As expected the Decision Tree performed the worst and AdaBoost performed the best with the Random Forest classifier slotting in the middle. <em>Boosting performs better than Random forest because every subsequent classifier is trying to fix their predecessors mistakes.</em> This is also why boosting tends to overfit easily but by using only 50 trees with a depth of 1 each, I did not consider that to be a problem in this case.</p>
+<h3 id="added-review-text-unigrams-capped-at-1000-words">Added review text unigrams capped at 1000 words</h3>
+<p>However, the scores are pretty bad and its apparent to me that without the review text added to the training there would be no chance of any improvement. So I added the unigram representation of the reviews to my dataset. Initially I used a maximum of 1000 words. I tweaked the parameters of the models since the number of features had increased from 102 -&gt; 1102. I have included the best performing ones in the table below. I&rsquo;ll discuss the tuning runs shortly.</p>
+<table>
+<thead>
+<tr>
+<th>Classifier</th>
+<th>Precision</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision Tree</td>
+<td>0.5724</td>
+<td>0.5732</td>
+</tr>
+<tr>
+<td>AdaBoost</td>
+<td>0.6132</td>
+<td>0.6147</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>0.6611</td>
+<td>0.6619</td>
+</tr>
+<tr>
+<td>Bagging</td>
+<td>0.6733</td>
+<td>0.6735</td>
+</tr>
+</tbody>
+</table>
+<p>I was happy with the immediate improvement in my results. Some interesting things to notice about this run:</p>
+<ul>
+<li>
+<p>AdaBoost didn&rsquo;t perform as well as random forest this time and that probably points to a certain amount of overfitting since the number of features was 1102 this time as opposed to 102 before. Ample opportunity for boosting to overfit the data.</p>
+</li>
+<li>
+<p>Bagging performed the best of the lot. Bagging is a known method to guard against imbalanced datasets and I was pleased to see that happening. <em>This method was also the slowest of the lot. It took about 20 mins for training and prediction. This is probably because I had not set a max-depth for the decision trees that were being trained by bagging. I did try setting it to 3 later but that caused a drop in the F1 score.</em></p>
+</li>
+</ul>
+<h5 id="model-parameter-tuning">Model parameter tuning</h5>
+<p>Now, I realised that by default the random forest and boosted classifiers use only 10 classifiers internally. Since each of them trains a very shallow decision tree it was obviously not optimal since I now had over a 1100 features. There was no way 10 trees could approximate that function. So I increased the number of estimators to a few hundred. Results are below:</p>
+<p>In both cases we can clearly see that the F1 score increases intially and falls after a point, signalling that we have overfit the training data. The sweet spot for Adaboost was 350 while that for random forest was 700. These numbers make sense because boosting tends to overfit faster than random forests.</p>
+<p><strong>AdaBoost</strong></p>
+<table>
+<thead>
+<tr>
+<th>Estimators</th>
+<th>Precision</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>0.6116</td>
+<td>0.6132</td>
+</tr>
+<tr>
+<td>350</td>
+<td>0.6132</td>
+<td>0.6147</td>
+</tr>
+<tr>
+<td>500</td>
+<td>0.6058</td>
+<td>0.6074</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Random Forest</strong></p>
+<table>
+<thead>
+<tr>
+<th>Estimators</th>
+<th>Precision</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>0.6481</td>
+<td>0.6491</td>
+</tr>
+<tr>
+<td>600</td>
+<td>0.6603</td>
+<td>0.6610</td>
+</tr>
+<tr>
+<td>700</td>
+<td>0.6611</td>
+<td>0.6619</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>0.6581</td>
+<td>0.6589</td>
+</tr>
+</tbody>
+</table>
+<h3 id="review-text-unigrams-with-2500-and-5000-words">Review text unigrams with 2500 and 5000 words</h3>
+<p>Bouyed by the improvements resulting from the addition of the unigram features I decided to add more words this time to see how the models would behave. I tried with 2500 and 5000 words but the results were dissapointing. The models took significantly longer to train. The 2500 word feature set reported marginally higher F1 scores while adding 5000 words caused performance to degrade in all cases except that of the basic Decision Tree. Even in that the improvement was marginal. Precision increased from 0.5724 to 0.587 and Recall from 0.5732 to 0.5886. So I gave up at this point.</p>
+<h3 id="self-training">Self Training</h3>
+<p>I decided to use 50% of the unlabelled data to help train my models and hopefully increase my F1 score.  I also felt that my <code>hygiene_sentiment</code> score would be a powerfull indicator and so I decided to include all of the ones with a value less than 0 to the unlabelled training set. The rest I sampled from the unlabelled dataset. Then I essentially trained a model on the labelled dataset and used it to predict the labels of the unlabelled rows. I selected the rows where the prediction confidence was high and added them back to my training dataset and retrained my model on this new larger dataset. Once a stopping condition is reached I use the final model for predicitons. Here is my code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  training_data <span style="color:#f92672">=</span> features[:<span style="color:#ae81ff">546</span>]
+  unlabelled_data <span style="color:#f92672">=</span> features[<span style="color:#ae81ff">546</span>:]
+  unlabelled_data_for_training <span style="color:#f92672">=</span> unlabelled_data[unlabelled_data[<span style="color:#e6db74">&#34;hygiene_sentiment&#34;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>]
+  unlabelled_data_for_training <span style="color:#f92672">=</span> unlabelled_data_for_training<span style="color:#f92672">.</span>append(unlabelled_data[unlabelled_data[<span style="color:#e6db74">&#34;hygiene_sentiment&#34;</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>sample(<span style="color:#ae81ff">2500</span>))
+  curr_training_set <span style="color:#f92672">=</span> training_data
+  curr_labels <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(given_labels)
+  
+  <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Initial training data: {training_data.shape}, Type: {type(training_data)}&#34;</span>)
+  
+  iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  
+  self_train_clf <span style="color:#f92672">=</span> ske<span style="color:#f92672">.</span>RandomForestClassifier(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">700</span>)
+  <span style="color:#75715e">#self_train_clf = ske.BaggingClassifier(base_estimator=DecisionTreeClassifier(), n_estimators=150)</span>
+  
+  <span style="color:#66d9ef">while</span> unlabelled_data_for_training<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+      self_train_clf<span style="color:#f92672">.</span>fit(curr_training_set, curr_labels)
+      probs <span style="color:#f92672">=</span> self_train_clf<span style="color:#f92672">.</span>predict_proba(unlabelled_data_for_training)
+      results <span style="color:#f92672">=</span> self_train_clf<span style="color:#f92672">.</span>predict(unlabelled_data_for_training)
+      high_conf <span style="color:#f92672">=</span> (probs[:,<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.8</span>) <span style="color:#f92672">|</span> (probs[:,<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.8</span>)
+  
+      <span style="color:#66d9ef">if</span> len(results[high_conf]) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>:
+          <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Terminating&#34;</span>)
+          <span style="color:#66d9ef">break</span>
+      curr_training_set <span style="color:#f92672">=</span> curr_training_set<span style="color:#f92672">.</span>append(unlabelled_data_for_training[high_conf])
+      curr_labels <span style="color:#f92672">=</span> curr_labels<span style="color:#f92672">.</span>append(pd<span style="color:#f92672">.</span>Series(results[high_conf]))
+  
+      unlabelled_data_for_training <span style="color:#f92672">=</span> unlabelled_data_for_training[np<span style="color:#f92672">.</span>invert(high_conf)]
+      iterations <span style="color:#f92672">=</span> iterations <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;iter: {iterations} Remaining unlabelled data: {unlabelled_data_for_training.shape[0]}&#34;</span>)
+</code></pre></div><p>I tried using the BaggingClassifier since it was my best performing classifier up to this point but the training simply took too long and I had to abandon it. RandomForest was much faster and so I used that. As you can see, I stopped when the number of high confidence rows was less than 10. It typically took about 50 iterations to get to that point.</p>
+<p>I must say that I had really high hopes from this but the results were quite dissapointing. No matter what classifier I tried, self training resulted in a worse classifier than if I had trained it on the labelled data alone. In hindsight, <strong>this does make sense because the classfier was not well performing to begin with and so retraining on data it had clasified itself was simply reinforcing its own mistakes.</strong></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The best performance I achieved was with the bagging approach with a Precision of 0.6733 and a Recall of 0.6735. I am aware that folks have achieved much better results than this. Looking forward to reading their reports to see what I overlooked.</p>
+
+    </div>
+  </div>
+  <div class="row pt-5 pb-5">
+    <div class="col-6 text-left">
+    
+      <a class="text-reset" href="https://bobopd.github.io/capstone/task4_5/">&lt; Task 4 and 5: Sentiment Analysis of dish reviews</a>
+    
+    </div>
+    <div class="col-6 text-right">
+    
+    </div>
+  </div>
+</div>
+<footer class="text-center bg-dark pt-5 col-12">
+  <a href="https://bobopd.github.io/capstone/" class="text-muted">Home</a>
+  
+</footer>
+</body>
+</html>

@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Task 6: Predicting hygiene from restaurant reviews</title>
+      <link>https://bobopd.github.io/capstone/task6/</link>
+      <pubDate>Mon, 20 Jul 2020 23:04:28 +0530</pubDate>
+      
+      <guid>https://bobopd.github.io/capstone/task6/</guid>
+      <description>In this task we will attempt to predict which restaurants will pass or fail a public health inspection based on the reviews and some additional info like pincode, categories, review count and overall rating. We are given a total of 13299 rows of restaurant data out of which 546 rows contain the true labels. Moreover the training data is evenly split between the 2 classes while the rest of the rows are apparently not.</description>
+    </item>
+    
+    <item>
       <title>Task 4 and 5: Sentiment Analysis of dish reviews</title>
       <link>https://bobopd.github.io/capstone/task4_5/</link>
       <pubDate>Sun, 28 Jun 2020 15:40:34 +0530</pubDate>
