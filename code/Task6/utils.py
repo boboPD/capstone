@@ -1,14 +1,13 @@
 import requests
 import sys
-import json
-from collections import deque
+import numpy as np
 
 def pred_save_submit_to_leaderboard(preds, filename):
     output_path = f"./output/{filename}"
     with open(output_path, "w", encoding="utf-8") as f:
-        f.write("pd\n")
+        f.write("pd")
         for p in preds:
-            f.write(str(p) + "\n")
+            f.write("\n" + str(p))
     
     submit_results_to_leaderboard(output_path)
 
@@ -35,31 +34,11 @@ def submit_results_to_leaderboard(filepath):
     else:
         print("Submission completed successfully!")
 
-def get_topic_words(base_topic_words):
-    api_url = "https://tuna.thesaurus.com/pageData/"
 
-    confirmed_topic_words = set()
-    working_list = deque(base_topic_words)
+def calculate_f1_score(predicted_labels, actual_labels):
+    pos_mask = predicted_labels[predicted_labels == 1]
+    rec_mask = actual_labels[actual_labels == 1]
+    precision = np.sum(actual_labels[pos_mask]) / len(predicted_labels[pos_mask])
+    recall = np.sum(predicted_labels[rec_mask]) / len(actual_labels[rec_mask])
 
-    while(len(working_list) > 0 and len(confirmed_topic_words) <= 30):
-        curr_word = working_list.popleft()
-        word_data = requests.get(api_url + curr_word).json()
-
-        try:
-            rel_words = _get_related_words(word_data["data"]["definitionData"]["definitions"][0])
-        except:
-            rel_words = []
-
-        for w in rel_words:
-            if w not in confirmed_topic_words:
-                working_list.append(w)
-        
-        confirmed_topic_words.add(curr_word)
-    
-    return confirmed_topic_words
-
-def _get_related_words(word_def):
-    synonyms = {syn["term"] for syn in word_def["synonyms"] if int(syn["similarity"]) >= 50}
-    antonyms = {ant["term"] for ant in word_def["antonyms"]}
-
-    return synonyms.union(antonyms)
+    return 2 * precision * recall / (precision + recall)
